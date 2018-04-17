@@ -28,30 +28,40 @@ public class Controller {
 			    int x = Integer.parseInt(input.next());
 			    int y = Integer.parseInt(input.next());
 			    points.add(new Point(x,y));
+			    list.add(new Point(x,y));
 		}input.close();
 		
-		for(int i=0; i<points.size(); i++){
-			for(int j=0; j<points.size(); j++)
-				{
-					if( points.get(i).getX()<=points.get(j).getX() && 
-							  points.get(i).getX()<=points.get(j).getX() && 
-							  ( points.get(i).getX()!=points.get(j).getX() ||
-							  	points.get(i).getX()!=points.get(j).getX() 
+		for(int i=0; i<list.size(); i++){
+			double domx = list.get(i).getX();
+			double domy = list.get(i).getY();
+			boolean domination=false;
+			for(int j=0; j<list.size(); j++)
+				{	
+					if( (i!=j) && 
+							domx<=list.get(j).getX() && 
+							  domy<=list.get(j).getY() && 
+							  ( domx!=list.get(j).getX() ||
+							  	domy!=list.get(j).getY() 
 							  )
-					 ){
-						list.add(points.get(i));}
-					}
+					 ){	System.out.println("check number:"+i+"."+j);
+						System.out.println(domx+" - "+ domy +"  dominates  "+list.get(j).getX()+"-"+list.get(j).getY() );
+						System.out.println();
+						list.remove(list.get(j));
+						
+					 
+					 }
+					 
 				}
-			
+		}
+		//Printing ----
 		
-		for (int i = 0; i < points.size(); i++) {
-			System.out.println(points.get(i).getX()+" "+points.get(i).getY());
-			}
 		System.out.println("++++++++++++");
-		
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getX()+" "+list.get(i).getY());
 			}
+		System.out.println("++++++++++++");
+			
+	
 	}
 		
 		
