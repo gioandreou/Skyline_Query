@@ -43,9 +43,9 @@ public class Controller {
 							  ( domx!=list.get(j).getX() ||
 							  	domy!=list.get(j).getY() 
 							  )
-					 ){	System.out.println("check number:"+i+"."+j);
-						System.out.println(domx+" - "+ domy +"  dominates  "+list.get(j).getX()+"-"+list.get(j).getY() );
-						System.out.println();
+					 ){	//System.out.println("check number:"+i+"."+j);
+						//System.out.println(domx+" - "+ domy +"  dominates  "+list.get(j).getX()+"-"+list.get(j).getY() );
+						//System.out.println();
 						list.remove(list.get(j));
 						
 					 
