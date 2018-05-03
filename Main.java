@@ -12,7 +12,7 @@ import java.util.Scanner;
  * 
  * This is the main class of the program where all the operations are made.
  * 
- * @author Giorgos Andreou AEM: 2334
+ * @author Giorgos Andreou AEM: 2334 andreoug@csd.auth.gr
  * 
  *
  */
@@ -31,9 +31,10 @@ public class Main {
 			 * @input A file with .txt extension
 			 * Files must be in the src folder of the project in order to be recognized by the program
 			 * Scanner is constructed and file is read
+			 * args[0] for the first file as parameter
 			 */
-			System.out.print("Enter the file name with extension : ");
-	        Scanner input = new Scanner(System.in);
+			//System.out.print("Enter the file name with extension : ");
+	        Scanner input = new Scanner(args[0]);
 	        File file = new File(input.nextLine());
 	        input = new Scanner(file); 
 	        
@@ -101,7 +102,7 @@ public class Main {
 			
 			//timer is stopped and running time calculated 
 			final long duration = System.nanoTime() - startTime;
-			System.out.println(duration/1000000000);
+			//System.out.println(duration/1000000000);
 				
 			
 		}	// A FileNotFoundException if the file is not located 
